@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.API", "Hermes.API\Hermes.API.csproj", "{D2A0C3E7-02AD-4734-888E-A089DEC2B270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Core", "Hermes.Core\Hermes.Core.csproj", "{D2CBCEEE-92A5-4AA5-A341-C7DEE0ED666E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Data", "Hermes.Data\Hermes.Data.csproj", "{9FE06F94-A506-42F8-BA0B-1325B322E74E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hermes.Tests", "Hermes.Tests\Hermes.Tests.csproj", "{24D7B92F-10DC-4465-B4F7-8A95CCFF91EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A0C3E7-02AD-4734-888E-A089DEC2B270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A0C3E7-02AD-4734-888E-A089DEC2B270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A0C3E7-02AD-4734-888E-A089DEC2B270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A0C3E7-02AD-4734-888E-A089DEC2B270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2CBCEEE-92A5-4AA5-A341-C7DEE0ED666E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CBCEEE-92A5-4AA5-A341-C7DEE0ED666E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CBCEEE-92A5-4AA5-A341-C7DEE0ED666E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CBCEEE-92A5-4AA5-A341-C7DEE0ED666E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FE06F94-A506-42F8-BA0B-1325B322E74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE06F94-A506-42F8-BA0B-1325B322E74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE06F94-A506-42F8-BA0B-1325B322E74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE06F94-A506-42F8-BA0B-1325B322E74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D7B92F-10DC-4465-B4F7-8A95CCFF91EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D7B92F-10DC-4465-B4F7-8A95CCFF91EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D7B92F-10DC-4465-B4F7-8A95CCFF91EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D7B92F-10DC-4465-B4F7-8A95CCFF91EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

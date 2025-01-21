@@ -1,0 +1,217 @@
+﻿@{
+    ViewBag.Title = "Home - DuckChat";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+        }
+
+        .container {
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            color: #333;
+        }
+
+            .container h1 {
+                margin-top: 0;
+                font-size: 38px;
+                color: #4e54c8;
+            }
+
+            .container h2 {
+                font-size: 22px;
+                margin: 20px 0;
+                color: #586069;
+            }
+
+        .auth-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+            .auth-buttons .btn {
+                padding: 12px 25px;
+                font-size: 16px;
+                background-color: #4e54c8;
+                color: #ffffff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.3s;
+                text-decoration: none;
+            }
+
+                .auth-buttons .btn:hover {
+                    background-color: #3d40a7;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .feature {
+            flex-basis: 30%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .feature:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .feature.light {
+                background-color: #f0f3f7;
+            }
+
+            .feature h3 {
+                font-size: 18px;
+                margin-bottom: 15px;
+                color: #4e54c8;
+            }
+
+            .feature p {
+                font-size: 14px;
+                line-height: 1.6;
+                color: #586069;
+            }
+
+        .conversation-styles {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .style-btn {
+            padding: 12px 25px;
+            margin: 0 15px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+            .style-btn.creative {
+                background-color: #4e54c8;
+                color: #ffffff;
+            }
+
+            .style-btn.precise {
+                background-color: #f0f3f7;
+                color: #4e54c8;
+                border-color: #4e54c8;
+            }
+
+            .style-btn.creative:hover {
+                background-color: #3d40a7;
+            }
+
+            .style-btn.precise:hover {
+                background-color: #e1e5ec;
+                color: #3d40a7;
+                border-color: #3d40a7;
+            }
+
+        .start-btn {
+            margin-top: 50px;
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+            .start-btn:hover {
+                background-color: #3d40a7;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Back to DuckChat</h1>
+        <h2>Connect with friends and chat in real-time</h2>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="auth-buttons">
+                <form asp-controller="Auth" asp-action="Logout" method="post" id="logoutForm" class="btn">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+                <form asp-controller="Home" asp-action="Profile" method="get" id="profileForm" class="btn">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">Profile</button>
+                </form>
+
+            </div>
+
+
+        }
+        else
+        {
+            <div class="auth-buttons">
+                <a href="@Url.Action("Login", "Auth")" class="btn">Login</a>
+                <a href="@Url.Action("Register", "Auth")" class="btn">Register</a>
+            </div>
+        }
+
+        <div class="features">
+            <div class="feature">
+                <h3>Why DuckChat?</h3>
+                <p>Simple and easy-to-use interface.</p>
+                <p>Connect with friends and family instantly.</p>
+            </div>
+            <div class="feature light">
+                <h3>How it works?</h3>
+                <p>Sign up, join a chat room, and start talking.</p>
+                <p>All your conversations are secure and private.</p>
+            </div>
+            <div class="feature">
+                <h3>Get Started</h3>
+                <p>Create your account and dive into the conversation.</p>
+                <p>Join existing chat rooms or create your own.</p>
+            </div>
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Action("Index", "Chat")" class="btn start-btn">Start Chatting</a>
+        }
+    </div>
+</body>
+</html>
+
